@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="#f2f2"
+    tools:context="com.vikkyb.check.devsir.quizfragments.Youranswers">
+
+    <!-- TODO: Update blank fragment layout -->
+   <TextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:id="@+id/t1"
+       android:text="Dear vikky"
+       android:textSize="30sp"
+       android:textStyle="bold"
+       android:textColor="@android:color/holo_blue_dark"
+       android:layout_marginTop="20dp"
+       android:gravity="center"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/answres"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:layout_marginTop="40dp"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textStyle="bold"
+
+        android:text="@string/hello_blank_fragment" />
+
+</LinearLayout>

@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Quizzine</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nameerror">Enter a valid name</string>
+    <string name="emailerror">Enter a valid email</string>
+    <string name="hello">Hello</string>
+    <string name="facebook_app_id">1502924326435740</string>
+    <string name="spinner_title">Select Font</string>
+    <string name="mobileerror">Enter a valid mobile number</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_notification">NotificationActivity</string>
+
+</resources>

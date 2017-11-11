@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "707893802296",
+    "firebase_url": "https://quizworld-1a7db.firebaseio.com",
+    "project_id": "quizworld-1a7db",
+    "storage_bucket": "quizworld-1a7db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:707893802296:android:9db441b8ca8e78de",
+        "android_client_info": {
+          "package_name": "com.vikkyb.check.devsir"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "707893802296-5pr9bobn8m7oue31ssjn7p32vv02cdgs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vikkyb.check.devsir",
+            "certificate_hash": "b482be7d379f664f0f56f5ad63a0073df09d469f"
+          }
+        },
+        {
+          "client_id": "707893802296-99dl71evv9c62gh48bftv3qhfjr39eil.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVPxlWmBrvZ4EHQ4NHtnsWo-rhJtJ0p6Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "707893802296-99dl71evv9c62gh48bftv3qhfjr39eil.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

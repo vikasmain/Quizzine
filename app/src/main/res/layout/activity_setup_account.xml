@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="First name"
+    android:layout_marginLeft="5dp"
+android:layout_marginTop="10dp"
+    android:textStyle="bold"
+    android:id="@+id/firstanme"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:backgroundTint="@android:color/darker_gray"
+        android:id="@+id/editText3"
+        android:layout_below="@+id/firstanme"
+        android:layout_centerHorizontal="true"
+/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Last name"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+
+        android:layout_below="@+id/editText3"
+        android:id="@+id/lastanme"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:ems="10"
+        android:backgroundTint="@android:color/darker_gray"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/editText7"
+        android:layout_below="@+id/lastanme"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Finish setup"
+        android:id="@+id/button2"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/editText10"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Phone number"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+
+        android:layout_below="@+id/editText7"
+        android:id="@+id/phonenumer"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:backgroundTint="@android:color/darker_gray"
+        android:ems="10"
+        android:id="@+id/editText9"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/phonenumer"
+        />
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Date of Birth"
+    android:id="@+id/datef"
+    android:layout_margin="5dp"
+    android:textStyle="bold"
+    android:layout_below="@+id/editText9"/>
+    <EditText
+        android:id="@+id/change_date_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Date of Birth"
+        android:ems="10"
+        android:backgroundTint="@android:color/darker_gray"
+        android:onClick="setDate"
+        android:layout_below="@+id/datef"/>
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:layout_marginLeft="5dp"
+
+        android:text="Username"
+        android:layout_below="@+id/change_date_button"
+        android:id="@+id/useranme"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/darker_gray"
+        android:id="@+id/editText10"
+        android:ems="10"
+        android:layout_below="@+id/useranme"
+        />
+
+</RelativeLayout>
+</ScrollView>

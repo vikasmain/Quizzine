@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Write your Question here."
+    android:gravity="center"
+    android:id="@+id/t1"
+    android:layout_marginTop="10dp"
+    android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:layout_below="@+id/t1"
+        android:hint="Topic"
+        android:inputType="textMultiLine" />
+
+    <EditText
+        android:id="@+id/editTextnakoli"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText"
+
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="Post"
+        android:inputType="text" />
+<AutoCompleteTextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/tags"
+    android:hint="Enter Tags"
+    android:layout_below="@+id/editTextnakoli"
+    android:ems="10"
+    android:layout_marginTop="10dp"
+    android:inputType="textAutoComplete"/>
+  <Button
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/save"
+      android:layout_marginTop="10dp"
+      android:text="Save"
+      android:layout_alignParentBottom="true"
+      android:background="@android:color/holo_blue_light"
+      android:layout_below="@+id/tags"/>
+
+
+
+
+
+</RelativeLayout>
+    </ScrollView>

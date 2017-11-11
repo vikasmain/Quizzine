@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <RelativeLayout xmlns:tools="http://schemas.android.com/tools" android:layout_height="wrap_content"
+    android:layout_width="match_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+<ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerVertical="true"
+    android:src="@drawable/ic_account_circle_black_48dp"
+    android:id="@+id/ima"/>
+
+        <LinearLayout android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+             android:padding="5dp"
+            android:layout_marginLeft="70dp"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
+
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content"
+        android:id="@+id/comment_author" tools:text="John Doe" android:textStyle="bold"/>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content"
+        android:id="@+id/comment_body" tools:text="This is the comment text.." style="@style/TextAppearance.AppCompat.Small"/>
+
+</LinearLayout>
+
+</RelativeLayout>
