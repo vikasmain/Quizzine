@@ -2,7 +2,7 @@
 Firebase Athentication,Realtime database,Firebase push notification,Firebase Quiz
 
 Sharing some screenshots here.
-Home screen
+<br></br>Home screen
 <img src="https://github.com/vikashumain/Quizzine/blob/master/Screenshot_2017-11-11-17-55-38-181_com.vikkyb.check.devsir.png" alt="home Screen">
 Main Post Screen(Hot questions)
 <img src="https://github.com/vikashumain/Quizzine/blob/master/Screenshot_2017-11-11-17-56-02-207_com.vikkyb.check.devsir.png" alt="Hot questions">
