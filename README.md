@@ -1,7 +1,7 @@
 # Quizzine
 Firebase Athentication(Google and Fb Login),Realtime database,Firebase push notification,Firebase Quiz
-<br></br>Please insert appropriate app-services.json and correct sha-1 for google login and Create an app on Fb developer console for inmplementing fb login.
-Sharing some screenshots here.
+<br></br>Please insert appropriate app-services.json and correct sha-1 for google login and Create an app on Fb developer console for implementing fb login.
+<br></br>Sharing some screenshots of app here.
 <br></br>Home screen
 <br></br><img src="https://github.com/vikashumain/Quizzine/blob/master/Screenshot_2017-11-11-17-55-38-181_com.vikkyb.check.devsir.png" alt="home Screen">
 <br></br>Main Post Screen(Hot questions)
