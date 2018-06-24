@@ -1,6 +1,7 @@
 package com.vikkyb.check.devsir;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -42,24 +43,41 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             if(getPosition()==0)
             {
                 Intent intent=new Intent(context1,MainActivity.class);
-                context1.startActivity(intent);
+SharedPreferences sharedPreferences=context1.getSharedPreferences("dbname",Context.MODE_PRIVATE);
+SharedPreferences.Editor editor=sharedPreferences.edit();
+editor.putString("dbn","Blog");
+editor.commit();
+context1.startActivity(intent);
 
             }
             else if(getPosition()==1)
             {
                 Intent intent=new Intent(context1,MainActivity.class);
+                SharedPreferences sharedPreferences=context1.getSharedPreferences("dbname",Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor=sharedPreferences.edit();
+                editor.putString("dbn","Science");
+                editor.commit();
+
                 context1.startActivity(intent);
 
             }
             else if(getPosition()==2)
             {
                 Intent intent=new Intent(context1,MainActivity.class);
+                SharedPreferences sharedPreferences=context1.getSharedPreferences("dbname",Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor=sharedPreferences.edit();
+                editor.putString("dbn","Comedy");
+                editor.commit();
                 context1.startActivity(intent);
 
             }
             else if(getPosition()==3)
             {
                 Intent intent=new Intent(context1,MainActivity.class);
+                SharedPreferences sharedPreferences=context1.getSharedPreferences("dbname",Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor=sharedPreferences.edit();
+                editor.putString("dbn","Maths");
+                editor.commit();
                 context1.startActivity(intent);
 
             }

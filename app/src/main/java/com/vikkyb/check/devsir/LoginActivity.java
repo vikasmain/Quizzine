@@ -250,7 +250,8 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                 Toast.makeText(this, "Google Play Services error.", Toast.LENGTH_SHORT).show();
         }
         private void checkuserexists() {
-                if(mAuth.getCurrentUser() !=null) {
+                if(mAuth.getCurrentUser() !=null)
+                {
                         final String uid = mAuth.getCurrentUser().getUid();
 
 

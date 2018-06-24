@@ -3,6 +3,7 @@ package com.vikkyb.check.devsir;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
@@ -12,7 +13,6 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -49,20 +49,25 @@ public class PostActivity extends Activity
     private DatabaseReference mDatabaseUsers;
     private static final int PERMISSIONS_REQUEST_READ_STORAGE = 100;
     private DatabaseReference databaseReference;
-    private ImageView im1, im2;
     private FirebaseAuth mauth;
+    SharedPreferences sharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post);
-
+        sharedPreferences=getApplicationContext().getSharedPreferences("dbname",MODE_PRIVATE);
+        String dref=sharedPreferences.getString("dbn","NotFound");
+        Toast.makeText(this, dref, Toast.LENGTH_SHORT).show();
         mauth = FirebaseAuth.getInstance();
-
         mcurrentuser = mauth.getCurrentUser();
-        Intent intent=getIntent();
         storageReference = FirebaseStorage.getInstance().getReference();//root directory
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("Blog");
-        //root directory
+        if(!TextUtils.isEmpty(dref)) {
+            databaseReference = FirebaseDatabase.getInstance().getReference().child(dref);
+        }else {
+            Toast.makeText(this, "Intent is empty", Toast.LENGTH_SHORT).show();
+            databaseReference = FirebaseDatabase.getInstance().getReference().child("Blog");
+        }
+
         progressDialog=new ProgressDialog(this);
 
         mDatabaseUsers = FirebaseDatabase.getInstance().getReference().child("Users").child(mcurrentuser.getUid());
@@ -106,7 +111,7 @@ private void startposting()
    final String title=e1.getText().toString().trim();
     final String desc=e3.getText().toString().trim();
     progressDialog.setTitle("Wait");
-progressDialog.setMessage("Saving Your Moet");
+progressDialog.setMessage("Saving Your Doubt");
     if(!TextUtils.isEmpty(title) && !TextUtils.isEmpty(desc))
     {
 

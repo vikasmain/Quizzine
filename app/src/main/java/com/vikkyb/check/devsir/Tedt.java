@@ -2,6 +2,7 @@ package com.vikkyb.check.devsir;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.SpannableString;
+import android.text.TextUtils;
 import android.text.style.UnderlineSpan;
 import android.util.Log;
 import android.util.TypedValue;
@@ -61,6 +63,8 @@ FirebaseUser mcurrentuser;
     private Button mCommentButton;
     private RecyclerView mCommentsRecycler;
     ProgressBar progressBar;
+    SharedPreferences sharedPreferences;
+    String db;
     long comment2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +72,8 @@ FirebaseUser mcurrentuser;
         setContentView(R.layout.tedt);
         answerscoun=(TextView)findViewById(R.id.answers);
         // Get post key from intent
-
+        sharedPreferences=getApplicationContext().getSharedPreferences("dbname",MODE_PRIVATE);
+        db=sharedPreferences.getString("dbn","NotFound");
         mPostKey = getIntent().getStringExtra(EXTRA_POST_KEY);
         if (mPostKey == null)
         {
@@ -77,8 +82,15 @@ FirebaseUser mcurrentuser;
         mauth= FirebaseAuth.getInstance();
 
         // Initialize Database
-        mPostReference = FirebaseDatabase.getInstance().getReference()
-                .child("Blog").child(mPostKey);
+        if(!TextUtils.isEmpty(db)) {
+            mPostReference = FirebaseDatabase.getInstance().getReference().child(db).child(mPostKey);
+        }
+        else
+        {
+            Toast.makeText(this, "Not Found", Toast.LENGTH_SHORT).show();
+            mPostReference = FirebaseDatabase.getInstance().getReference().child("NotFound").child(mPostKey);
+
+        }
         mCommentsReference = FirebaseDatabase.getInstance().getReference()
                 .child("post-comments").child(mPostKey);
 

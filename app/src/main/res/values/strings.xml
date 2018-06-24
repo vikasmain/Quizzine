@@ -9,7 +9,7 @@
     <string name="spinner_title">Select Font</string>
     <string name="mobileerror">Enter a valid mobile number</string>
 
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Logout</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

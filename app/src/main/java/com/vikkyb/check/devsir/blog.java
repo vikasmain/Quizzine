@@ -1,5 +1,7 @@
 package com.vikkyb.check.devsir;
 
+import com.google.firebase.database.Exclude;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,7 +12,7 @@ public class blog {
     private String users;
     private String number;
     private String title;
-
+long c;
     public String getUsers() {
         return users;
     }
@@ -88,33 +90,27 @@ public class blog {
         this.number = number;
     }
 
-    public blog(String title, String desc, String image, String uid, String deeplinks, long noofshares) {
+    public blog(long c) {
         this.title = title;
         this.desc = desc;
         this.image = image;
         this.uid = uid;
         this.deeplinks=deeplinks;
-        this.noofshares=noofshares;
+        this.c=c;
     }
 
 
 
-/*
+
     @Exclude
         public Map<String, Object> toMap() {
             HashMap<String, Object> result = new HashMap<>();
-            result.put("uid", uid);
-            result.put("title", title);
+            result.put("score", c);
 
-            result.put("desc", desc);
-            result.put("image", image);
-            result.put("jokeKey", jokeKey);
-            result.put("likeCount", likeCount);
-            result.put("like",stars);
 
             return result;
         }
-  */  public String getUid() {
+    public String getUid() {
         return uid;
     }
 

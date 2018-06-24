@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -21,27 +22,35 @@ import com.vikkyb.check.devsir.R;
  */
 public class Youranswers extends Fragment {
 
-TextView textView,getTextView;
+    TextView textView,getTextView;
+    private FirebaseUser mcurrentuser;
+
     public Youranswers() {
         // Required empty public constructor
     }
-FirebaseAuth mauth;
+    FirebaseAuth mauth;
     String current;
-DatabaseReference databaseReference;
+    int pressed;
+    DatabaseReference databaseReference,mDatabaseUsers;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v= inflater.inflate(R.layout.fragment_youranswers, container, false);
-        mauth=FirebaseAuth.getInstance();
-        textView=(TextView)v.findViewById(R.id.answres);
-        getTextView=(TextView)v.findViewById(R.id.t1);
-        databaseReference= FirebaseDatabase.getInstance().getReference().child("Users").child(mauth.getCurrentUser().getUid());
-        databaseReference.addValueEventListener(new ValueEventListener() {
+        View v = inflater.inflate(R.layout.fragment_youranswers, container, false);
+        mauth = FirebaseAuth.getInstance();
+        textView = (TextView) v.findViewById(R.id.answres);
+        getTextView = (TextView) v.findViewById(R.id.t1);
+        mcurrentuser = mauth.getCurrentUser();
+        pressed=getArguments().getInt("score");
+
+        mDatabaseUsers= FirebaseDatabase.getInstance().getReference().child("Users").child(mcurrentuser.getUid());
+        mDatabaseUsers.keepSynced(true);
+        mDatabaseUsers.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                String username=(String)dataSnapshot.child("username").getValue();
-                getTextView.setText("Dear "+username);
+                String get=(String)dataSnapshot.child("username").getValue();
+                getTextView.setText("Dear "+get+" ");
+                textView.setText("Your Score is "+pressed);
             }
 
             @Override
@@ -49,9 +58,8 @@ DatabaseReference databaseReference;
 
             }
         });
-        Integer integer=getArguments().getInt("score");
-        textView.setText("Your Score is "+integer);
-        return v;
-    }
+
+return v;
+}
 
 }

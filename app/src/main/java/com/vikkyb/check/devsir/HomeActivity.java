@@ -23,6 +23,9 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.firebase.ui.auth.AuthUI;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -228,7 +231,11 @@ TextView textView;
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+            signOut();
+        }
+        else if(id==R.id.action_notify)
+        {
+            startActivity(new Intent(HomeActivity.this,NotificationActivity.class));
         }
 
         return super.onOptionsItemSelected(item);
@@ -245,9 +252,28 @@ TextView textView;
             startActivity(intent);
         }
 
+        else if(id==R.id.logo)
+        {
+            signOut();
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+    public void signOut() {
+        // Firebase sign out
+        AuthUI.getInstance()
+                .signOut(HomeActivity.this)
+                .addOnCompleteListener(new OnCompleteListener<Void>(){
+
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+
+                        // do something here
+
+                    }
+                });
+    }
+
 }
